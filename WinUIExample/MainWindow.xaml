@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Window
+    x:Class="WinUIExample.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:WinUIExample"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt"/>
+    </Window.SystemBackdrop>
+    <Grid
+        RowDefinitions="40, *, 24" x:Name="Window">
+        <Grid Grid.Row="0">
+            <Grid ColumnDefinitions="Auto, *">
+                <MenuBar Grid.Column="0">
+                    <MenuBarItem Title="File" x:Uid="File">
+                        <MenuFlyoutItem Text="Open..." x:Uid="Open" x:Name="Open">
+                            <MenuFlyoutItem.KeyboardAccelerators>
+                                <KeyboardAccelerator Modifiers="Control" Key="O"/>
+                            </MenuFlyoutItem.KeyboardAccelerators>
+                        </MenuFlyoutItem>
+                        <MenuFlyoutSeparator />
+                        <MenuFlyoutItem Text="Exit" x:Uid="Exit" Click="ClickExit" />
+                    </MenuBarItem>
+
+                    <MenuBarItem Title="Help" x:Uid="Help">
+                        <MenuFlyoutItem Text="About" x:Uid="About" />
+                    </MenuBarItem>
+                </MenuBar>
+
+                <Grid x:Name="AppTitleBar" Grid.Column="1" >
+                    <TextBlock x:Name="AppTitleTextBlock" 
+                        x:Uid="AppTitleText"
+                        Text="AppTitle"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center" />
+                </Grid>
+            </Grid>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid>
+                <TextBlock Grid.Column="0" Text="" x:Name="StatusBar" Margin="8, 0, 0, 0" FontSize="12" VerticalAlignment="Center" />
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
