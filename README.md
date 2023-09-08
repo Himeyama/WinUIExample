@@ -1,7 +1,7 @@
 # WinUIExample
 This repository is an example of a small WinUI app.
 
-![Alt text](screenshot.png)
+![WinUI3 Screenshot](docs/screenshot.png)
 
 This project can be developed using a combination of dotnet commands and visual studio code, or using visual studio.
 
