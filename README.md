@@ -17,5 +17,5 @@ dotnet add .\WinUIExample\WinUIExample.csproj package <Package name>
 
 ### Publish an application
 ```ps1
-dotnet publish .\WinUIExample\WinUIExample.csproj /p:Version=23.01.01
+dotnet publish .\WinUIExample\WinUIExample.csproj  -c Release /p:Version=23.09.23
 ```

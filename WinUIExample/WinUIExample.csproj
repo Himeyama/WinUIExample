@@ -13,9 +13,6 @@
     <!-- 法人・個人名 -->
     <Company>MURATA Mitsuharu</Company>
 
-    <!-- ライセンス -->
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-
     <!-- 著作権情報 -->
     <Copyright>(c) $([System.DateTime]::Now.Year) $(Company)</Copyright>
 
@@ -24,6 +21,10 @@
     
     <!-- アイコン -->
     <ApplicationIcon>Assets/App.ico</ApplicationIcon>
+
+    <!-- リポジトリの場所 -->
+    <RepositoryUrl>https://github.com/himeyama/WinUIExample</RepositoryUrl>
+    <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
 
     <!-- LICENSE & README.md の場所 -->
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -35,7 +36,72 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
     <Platform>x64</Platform>
+    <Platforms>x64</Platforms>
+    <Configurations>Release</Configurations>
+    <GenerateAppxPackageOnBuild>True</GenerateAppxPackageOnBuild>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateThumbprint>7B2D2BB4DD51991D869B5CE680BE48121A9CCF42</PackageCertificateThumbprint>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Never</AppxBundle>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Assets\App.scale-100.png" />
+    <Content Remove="Assets\App.scale-125.png" />
+    <Content Remove="Assets\App.scale-150.png" />
+    <Content Remove="Assets\App.scale-200.png" />
+    <Content Remove="Assets\App.scale-400.png" />
+    <Content Remove="Assets\AppIcon.altform-lightunplated_targetsize-16.png" />
+    <Content Remove="Assets\AppIcon.altform-lightunplated_targetsize-24.png" />
+    <Content Remove="Assets\AppIcon.altform-lightunplated_targetsize-256.png" />
+    <Content Remove="Assets\AppIcon.altform-lightunplated_targetsize-32.png" />
+    <Content Remove="Assets\AppIcon.altform-lightunplated_targetsize-48.png" />
+    <Content Remove="Assets\AppIcon.altform-unplated_targetsize-16.png" />
+    <Content Remove="Assets\AppIcon.altform-unplated_targetsize-24.png" />
+    <Content Remove="Assets\AppIcon.altform-unplated_targetsize-256.png" />
+    <Content Remove="Assets\AppIcon.altform-unplated_targetsize-32.png" />
+    <Content Remove="Assets\AppIcon.altform-unplated_targetsize-48.png" />
+    <Content Remove="Assets\AppIcon.scale-100.png" />
+    <Content Remove="Assets\AppIcon.scale-125.png" />
+    <Content Remove="Assets\AppIcon.scale-150.png" />
+    <Content Remove="Assets\AppIcon.scale-200.png" />
+    <Content Remove="Assets\AppIcon.scale-400.png" />
+    <Content Remove="Assets\AppIcon.targetsize-16.png" />
+    <Content Remove="Assets\AppIcon.targetsize-24.png" />
+    <Content Remove="Assets\AppIcon.targetsize-256.png" />
+    <Content Remove="Assets\AppIcon.targetsize-32.png" />
+    <Content Remove="Assets\AppIcon.targetsize-48.png" />
+    <Content Remove="Assets\LargeTile.scale-100.png" />
+    <Content Remove="Assets\LargeTile.scale-125.png" />
+    <Content Remove="Assets\LargeTile.scale-150.png" />
+    <Content Remove="Assets\LargeTile.scale-200.png" />
+    <Content Remove="Assets\LargeTile.scale-400.png" />
+    <Content Remove="Assets\MediumTile.scale-100.png" />
+    <Content Remove="Assets\MediumTile.scale-125.png" />
+    <Content Remove="Assets\MediumTile.scale-150.png" />
+    <Content Remove="Assets\MediumTile.scale-200.png" />
+    <Content Remove="Assets\MediumTile.scale-400.png" />
+    <Content Remove="Assets\SmallTile.scale-100.png" />
+    <Content Remove="Assets\SmallTile.scale-125.png" />
+    <Content Remove="Assets\SmallTile.scale-150.png" />
+    <Content Remove="Assets\SmallTile.scale-200.png" />
+    <Content Remove="Assets\SmallTile.scale-400.png" />
+    <Content Remove="Assets\SplashScreen.scale-100.png" />
+    <Content Remove="Assets\SplashScreen.scale-125.png" />
+    <Content Remove="Assets\SplashScreen.scale-150.png" />
+    <Content Remove="Assets\SplashScreen.scale-200.png" />
+    <Content Remove="Assets\SplashScreen.scale-400.png" />
+    <Content Remove="Assets\WideTile.scale-100.png" />
+    <Content Remove="Assets\WideTile.scale-125.png" />
+    <Content Remove="Assets\WideTile.scale-150.png" />
+    <Content Remove="Assets\WideTile.scale-200.png" />
+    <Content Remove="Assets\WideTile.scale-400.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230913002" />
