@@ -21,3 +21,12 @@ Publishes the application and its dependencies to a folder.
 
 The command execution will output to `bin\x64\Debug\net7.0-windows10.0.19041.0`, and the application can be run by clicking on the executable file.
 
+## Run a application
+```ps1
+dotnet run start --project .\WinUIExample\WinUIExample.csproj
+```
+
+## Install a package
+```ps1
+dotnet add .\WinUIExample\WinUIExample.csproj package <Package name>
+```

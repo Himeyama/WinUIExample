@@ -4,7 +4,7 @@ namespace WinUIExample
 {
     public partial class App : Application
     {
-        private Window? mainWindow;
+        private Window mainWindow {get; set;}
         public App()
         {
             InitializeComponent();
