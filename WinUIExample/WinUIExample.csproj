@@ -35,6 +35,7 @@
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
     <Platform>x64</Platform>
     <Platforms>x64</Platforms>
     <Configurations>Release</Configurations>
