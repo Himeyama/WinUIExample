@@ -1,6 +1,34 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- アプリ名 -->
+    <AssemblyName>WinUIExample</AssemblyName>
+    
+    <!-- アプリの説明 -->
+    <Description>This app is an example of a small WinUI app.</Description>
+
+    <!-- 作者 -->
+    <Authors>MURATA Mitsuharu</Authors>
+
+    <!-- 法人・個人名 -->
+    <Company>MURATA Mitsuharu</Company>
+
+    <!-- ライセンス -->
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <!-- 著作権情報 -->
+    <Copyright>(c) $([System.DateTime]::Now.Year) $(Company)</Copyright>
+
+    <!-- 発行先 -->
+    <PublishDir>publish</PublishDir>
+    
+    <!-- アイコン -->
+    <ApplicationIcon>Assets/App.ico</ApplicationIcon>
+
+    <!-- LICENSE & README.md の場所 -->
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows10.0.19041.0</TargetFramework>
     <UseWinUI>true</UseWinUI>
@@ -11,6 +39,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.4.230913002" />
+    <None Include="..\LICENSE" Pack="true" PackagePath="\" />
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
