@@ -39,6 +39,8 @@
     <Platform>x64</Platform>
     <Platforms>x64</Platforms>
     <SelfContained>true</SelfContained>
+
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
