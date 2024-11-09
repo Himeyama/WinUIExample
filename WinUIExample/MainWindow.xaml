@@ -18,8 +18,8 @@
         <Grid Grid.Row="0">
             <Grid ColumnDefinitions="Auto, *">
                 <MenuBar Grid.Column="0">
-                    <MenuBarItem Title="File" x:Uid="File">
-                        <MenuFlyoutItem Text="Open" x:Uid="Open">
+                    <MenuBarItem Title="File" x:Uid="File" AccessKey="F">
+                        <MenuFlyoutItem Text="Open" x:Uid="Open" Click="ClickOpen" AccessKey="O">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xED25;" FontFamily="Segoe MDL2 Assets" />
                             </MenuFlyoutItem.Icon>
@@ -27,7 +27,7 @@
                                 <KeyboardAccelerator Modifiers="Control" Key="O"/>
                             </MenuFlyoutItem.KeyboardAccelerators>
                         </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Save" x:Uid="Save">
+                        <MenuFlyoutItem Text="Save" x:Uid="Save" Click="ClickSave" AccessKey="S">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xE74E;" FontFamily="Segoe MDL2 Assets" />
                             </MenuFlyoutItem.Icon>
@@ -35,7 +35,7 @@
                                 <KeyboardAccelerator Modifiers="Control" Key="S"/>
                             </MenuFlyoutItem.KeyboardAccelerators>
                         </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Save as" x:Uid="SaveAs">
+                        <MenuFlyoutItem Text="Save as" x:Uid="SaveAs" Click="ClickSaveAs">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xE792;" FontFamily="Segoe MDL2 Assets" />
                             </MenuFlyoutItem.Icon>
@@ -44,11 +44,11 @@
                             </MenuFlyoutItem.KeyboardAccelerators>
                         </MenuFlyoutItem>
                         <MenuFlyoutSeparator />
-                        <MenuFlyoutItem Text="Exit" x:Uid="Exit" Click="ClickExit" />
+                        <MenuFlyoutItem Text="Exit" x:Uid="Exit" Click="ClickExit" AccessKey="E"/>
                     </MenuBarItem>
 
-                    <MenuBarItem Title="Edit" x:Uid="Edit">
-                        <MenuFlyoutItem Text="Undo" x:Uid="Undo">
+                    <MenuBarItem Title="Edit" x:Uid="Edit" AccessKey="E">
+                        <MenuFlyoutItem Text="Undo" x:Uid="Undo" AccessKey="U">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xE7A7;" FontFamily="Segoe MDL2 Assets" />
                             </MenuFlyoutItem.Icon>
@@ -57,7 +57,7 @@
                             </MenuFlyoutItem.KeyboardAccelerators>
                         </MenuFlyoutItem>
                         <MenuFlyoutSeparator />
-                        <MenuFlyoutItem Text="Cut" x:Uid="Cut">
+                        <MenuFlyoutItem Text="Cut" x:Uid="Cut" AccessKey="X">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xE8C6;" FontFamily="Segoe MDL2 Assets" />
                             </MenuFlyoutItem.Icon>
@@ -65,7 +65,7 @@
                                 <KeyboardAccelerator Modifiers="Control" Key="X"/>
                             </MenuFlyoutItem.KeyboardAccelerators>
                         </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Copy" x:Uid="Copy">
+                        <MenuFlyoutItem Text="Copy" x:Uid="Copy" AccessKey="C">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xE8C8;" FontFamily="Segoe MDL2 Assets" />
                             </MenuFlyoutItem.Icon>
@@ -73,7 +73,7 @@
                                 <KeyboardAccelerator Modifiers="Control" Key="C"/>
                             </MenuFlyoutItem.KeyboardAccelerators>
                         </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Paste" x:Uid="Paste">
+                        <MenuFlyoutItem Text="Paste" x:Uid="Paste" AccessKey="V">
                             <MenuFlyoutItem.Icon>
                                 <FontIcon Glyph="&#xE77F;" FontFamily="Segoe MDL2 Assets" />
                             </MenuFlyoutItem.Icon>
@@ -84,34 +84,36 @@
                     </MenuBarItem>
 
                     <MenuBarItem Title="View" x:Uid="View">
-                        <MenuFlyoutItem Text="Zoom in" x:Uid="ZoomIn">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xE8A3;" FontFamily="Segoe MDL2 Assets" />
-                            </MenuFlyoutItem.Icon>
-                            <MenuFlyoutItem.KeyboardAccelerators>
-                                <KeyboardAccelerator Key="Add" Modifiers="Control" />
-                            </MenuFlyoutItem.KeyboardAccelerators>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Zoom out" x:Uid="ZoomOut">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xE71F;" FontFamily="Segoe MDL2 Assets" />
-                            </MenuFlyoutItem.Icon>
-                            <MenuFlyoutItem.KeyboardAccelerators>
-                                <KeyboardAccelerator Key="Subtract" Modifiers="Control" />
-                            </MenuFlyoutItem.KeyboardAccelerators>
-                        </MenuFlyoutItem>
-                        <MenuFlyoutItem Text="Restore default zoom" x:Uid="RestoreDefaultZoom">
-                            <MenuFlyoutItem.Icon>
-                                <FontIcon Glyph="&#xE71E;" FontFamily="Segoe MDL2 Assets" />
-                            </MenuFlyoutItem.Icon>
-                            <MenuFlyoutItem.KeyboardAccelerators>
-                                <KeyboardAccelerator Key="Number0" Modifiers="Control" />
-                            </MenuFlyoutItem.KeyboardAccelerators>
-                        </MenuFlyoutItem>
+                        <MenuFlyoutSubItem Text="Zoom" x:Uid="Zoom">
+                            <MenuFlyoutItem Text="Zoom in" x:Uid="ZoomIn" Name="ZoomIn" Click="ClickZoomIn">
+                                <MenuFlyoutItem.Icon>
+                                    <FontIcon Glyph="&#xE8A3;" FontFamily="Segoe MDL2 Assets" />
+                                </MenuFlyoutItem.Icon>
+                                <MenuFlyoutItem.KeyboardAccelerators>
+                                    <KeyboardAccelerator Modifiers="Control" />
+                                </MenuFlyoutItem.KeyboardAccelerators>
+                            </MenuFlyoutItem>
+                            <MenuFlyoutItem Text="Zoom out" x:Uid="ZoomOut" Name="ZoomOut" Click="ClickZoomOut">
+                                <MenuFlyoutItem.Icon>
+                                    <FontIcon Glyph="&#xE71F;" FontFamily="Segoe MDL2 Assets" />
+                                </MenuFlyoutItem.Icon>
+                                <MenuFlyoutItem.KeyboardAccelerators>
+                                    <KeyboardAccelerator Key="Subtract" Modifiers="Control" />
+                                </MenuFlyoutItem.KeyboardAccelerators>
+                            </MenuFlyoutItem>
+                            <MenuFlyoutItem Text="Restore default zoom" x:Uid="RestoreDefaultZoom" Click="ClickRestoreDefaultZoom">
+                                <MenuFlyoutItem.Icon>
+                                    <FontIcon Glyph="&#xE71E;" FontFamily="Segoe MDL2 Assets" />
+                                </MenuFlyoutItem.Icon>
+                                <MenuFlyoutItem.KeyboardAccelerators>
+                                    <KeyboardAccelerator Key="Number0" Modifiers="Control" />
+                                </MenuFlyoutItem.KeyboardAccelerators>
+                            </MenuFlyoutItem>
+                        </MenuFlyoutSubItem>
                     </MenuBarItem>
 
-                    <MenuBarItem Title="Help" x:Uid="Help">
-                        <MenuFlyoutItem Text="About" x:Uid="About" />
+                    <MenuBarItem Title="Help" x:Uid="Help" AccessKey="H">
+                        <MenuFlyoutItem Text="About" x:Uid="About" Click="ClickAbout" AccessKey="A" />
                     </MenuBarItem>
                 </MenuBar>
                 <Grid x:Name="AppTitleBar" Grid.Column="1" />
@@ -130,9 +132,14 @@
 
         <Grid Grid.Row="2">
             <Grid>
-                <TextBlock Grid.Column="0" Text="" x:Name="StatusBar" Margin="8, 0, 0, 0"
+                <TextBlock Grid.Column="0" x:Name="StatusBar" Margin="8, 0, 0, 0"
                     FontSize="12" VerticalAlignment="Center" />
             </Grid>
+        </Grid>
+        <!-- I18n -->
+        <Grid Visibility="Collapsed">
+            <TextBlock x:Uid="ZoomInText" Name="ZoomInText"/>
+            <TextBlock x:Uid="ZoomOutText" Name="ZoomOutText"/>
         </Grid>
     </Grid>
 </Window>
