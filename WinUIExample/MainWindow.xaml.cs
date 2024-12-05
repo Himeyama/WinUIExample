@@ -1,7 +1,9 @@
+using System;
 using Common;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
+using Windows.Networking.NetworkOperators;
 using Windows.System;
 
 
@@ -18,8 +20,18 @@ public sealed partial class MainWindow : Window
 
         Status.statusBar = StatusBar;
         Status.dispatcherQueue = DispatcherQueue;
-        ZoomIn.KeyboardAcceleratorTextOverride = ZoomInText.Text;
-        ZoomOut.KeyboardAcceleratorTextOverride = ZoomOutText.Text;
+        // ZoomIn.KeyboardAcceleratorTextOverride = ZoomInText.Text;
+        // ZoomOut.KeyboardAcceleratorTextOverride = ZoomOutText.Text;
+    }
+
+    void AutoSave_Toggled(object sender, RoutedEventArgs e)
+    {
+        try{
+            EnableAutoSave.Visibility = AutoSave.IsOn ? Visibility.Visible : Visibility.Collapsed;
+            DisableAutoSave.Visibility = AutoSave.IsOn ? Visibility.Collapsed : Visibility.Visible;
+        }catch(Exception ex){
+            Status.AddMessage(ex.Message);
+        }
     }
 
     async void ClickOpen(object sender, RoutedEventArgs e)
