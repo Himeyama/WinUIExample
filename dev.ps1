@@ -6,7 +6,6 @@ $version = (Get-Date).ToString("yy.M.d")
 $date = (Get-Date).ToString("yyyyMMdd")
 $publishDir = "WinUIExample\publish"
 $muiIcon = "WinUIExample\Assets\App.ico"
-$size = [Math]::Round((Get-ChildItem $publishDir -Force -Recurse -ErrorAction SilentlyContinue | Measure-Object Length -Sum).Sum / 1KB, 0, [MidpointRounding]::AwayFromZero)
 
 $startMenuPath = [Environment]::GetFolderPath("Programs")
 
@@ -33,6 +32,7 @@ function Publish() {
 
 function Zip() {
     Publish
+    $size = [Math]::Round((Get-ChildItem $publishDir -Force -Recurse -ErrorAction SilentlyContinue | Measure-Object Length -Sum).Sum / 1KB, 0, [MidpointRounding]::AwayFromZero)
     Compress-Archive -Path $publishDir -DestinationPath $appName-$version.zip
 }
 
