@@ -1,4 +1,4 @@
-﻿$csproj = ".\WinUIExample\WinUIExample.csproj"
+$csproj = ".\WinUIExample\WinUIExample.csproj"
 $appName = "WinUIExample"
 $publisher = "ひかり"
 $execFile = "WinUIExample.exe"
