@@ -31,16 +31,11 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows10.0.22621.0</TargetFramework>
-    <UseWinUI>true</UseWinUI>
+    <TargetFramework>net9.0-windows10.0.22621.0</TargetFramework>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <Platform>x64</Platform> <!-- HiDpi 対応に必要 -->
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
-    <Platform>x64</Platform>
-    <Platforms>x64</Platforms>
     <SelfContained>true</SelfContained>
-
-    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -49,7 +44,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240923002" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250513003" />
   </ItemGroup>
-
 </Project>
