@@ -30,7 +30,17 @@ function Rename-App {
     param (
         [string]$name
     )
-    $oldName = "WinUIExample"
+    $oldName = ""
+    # README.mdファイルを読み込む
+    $content = Get-Content -Path 'README.md'
+
+    # 最初の行を取得
+    $firstLine = $content[0]
+
+    # 正規表現で文字列を抽出
+    if ($firstLine -match '^#\s*(.+)$') {
+        $oldName = $matches[1]
+    }
 
     # 削除
     if (Test-Path -Path .\$oldName\bin) {
