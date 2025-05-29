@@ -1,19 +1,16 @@
 ﻿using Microsoft.UI.Xaml;
 
-namespace WinUIExample
+namespace WinUIExample;
+public partial class App : Application
 {
-    public partial class App : Application
+    public App()
     {
-        private Window mainWindow {get; set;}
-        public App()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
+    }
 
-        protected override void OnLaunched(LaunchActivatedEventArgs args)
-        {
-            mainWindow = new MainWindow();
-            mainWindow.Activate();
-        }
+    protected override void OnLaunched(LaunchActivatedEventArgs args)
+    {
+        Window mainWindow = new MainWindow();
+        mainWindow.Activate();
     }
 }
