@@ -22,6 +22,7 @@ function Update-FileContent {
     )
     $content = Get-Content -Path $filePath -Raw
     $content = $content -replace $oldValue, $newValue
+    $content = $content.TrimEnd()
     Set-Content -Path $filePath -Value $content
     Write-Host "$filePath 内の参照を更新しました"
 }
