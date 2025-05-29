@@ -33,9 +33,9 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net9.0-windows10.0.22621.0</TargetFramework>
     <EnableMsixTooling>true</EnableMsixTooling>
-    <Platform>x64</Platform> <!-- HiDpi 対応に必要 -->
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
     <SelfContained>true</SelfContained>
+    <ApplicationManifest>app.manifest</ApplicationManifest> <!-- HiDpi 対応に必要 -->
   </PropertyGroup>
 
   <ItemGroup>
