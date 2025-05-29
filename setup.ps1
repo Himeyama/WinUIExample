@@ -77,6 +77,7 @@ function Rename-App {
     }
 
     Update-FileContent -filePath "README.md" -oldValue $oldName -newValue $name
+    Update-FileContent -filePath "README.en.md" -oldValue $oldName -newValue $name
     Update-FileContent -filePath "dev.ps1" -oldValue $oldName -newValue $name
     Update-FileContent -filePath "$name\App.xaml" -oldValue $oldName -newValue $name
     Update-FileContent -filePath "$name\App.xaml.cs" -oldValue $oldName -newValue $name
