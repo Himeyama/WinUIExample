@@ -1,10 +1,6 @@
 using System;
 using Common;
 using Microsoft.UI.Xaml;
-using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Input;
-using Windows.Networking.NetworkOperators;
-using Windows.System;
 
 
 namespace WinUIExample;

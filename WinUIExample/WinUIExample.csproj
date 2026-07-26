@@ -3,6 +3,7 @@
   <PropertyGroup>
     <!-- アプリ名 -->
     <AssemblyName>WinUIExample</AssemblyName>
+    <RootNamespace>WinUIExample</RootNamespace>
     
     <!-- アプリの説明 -->
     <Description>This app is an example of a small WinUI app.</Description>
@@ -18,6 +19,9 @@
 
     <!-- 発行先 -->
     <PublishDir>publish</PublishDir>
+    <PublishRelease>true</PublishRelease>
+
+    <SatelliteResourceLanguages>ja;en</SatelliteResourceLanguages>
     
     <!-- アイコン -->
     <ApplicationIcon>Assets/App.ico</ApplicationIcon>
@@ -44,6 +48,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.7.250513003" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.3.1" />
   </ItemGroup>
 </Project>
